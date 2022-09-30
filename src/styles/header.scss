@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+.header-wrapper {
+  background-color: #ffff;
+  width: 100vw;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .header-inner {
+    padding: 0 0 0 14px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30rem;
+    margin-right: 30rem;
+    .title {
+      .header-Title {
+        font-size: 2rem;
+        line-height: 1.1;
+        color: #414141;
+        font-family: "Pacifico", cursive;
+
+        &:hover {
+          transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          -o-transform: scale(1.1);
+        }
+
+        .title-link {
+          color: #414141;
+        }
+      }
+    }
+
+    .icons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .github-link {
+        margin: 0.5rem;
+
+        &:hover {
+          transform: scale(1.2);
+          -webkit-transform: scale(1.2);
+          -moz-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+          -o-transform: scale(1.2);
+        }
+
+        .github-icon {
+          font-size: 2rem;
+          color: #414141;
+        }
+      }
+      .linkedin-link {
+        margin: 0.5rem;
+
+        &:hover {
+          transform: scale(1.2);
+          -webkit-transform: scale(1.2);
+          -moz-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+          -o-transform: scale(1.2);
+        }
+
+        .linkedin-icon {
+          font-size: 2rem;
+          color: #0a66c2;
+        }
+      }
+      .twitter-link {
+        margin: 0.5rem;
+
+        &:hover {
+          transform: scale(1.2);
+          -webkit-transform: scale(1.2);
+          -moz-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+          -o-transform: scale(1.2);
+        }
+
+        .twitter-icon {
+          font-size: 2rem;
+          color: #1a8cd8;
+        }
+      }
+    }
+  }
+}
