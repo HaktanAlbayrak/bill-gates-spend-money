@@ -3,8 +3,7 @@
 .header-wrapper {
   background-color: #ffff;
   width: 100vw;
-  height: 100px;
-  position: fixed;
+  height: 6rem;
   top: 0;
   left: 0;
   z-index: 999;
@@ -18,8 +17,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 30rem;
-    margin-right: 30rem;
+    margin-left: 28rem;
+    margin-right: 28rem;
+
     .title {
       .header-Title {
         font-size: 2rem;
