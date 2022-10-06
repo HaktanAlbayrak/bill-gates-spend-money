@@ -1,0 +1,28 @@
+.money-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+
+  .money-bar {
+    width: 1000px;
+    height: 4.5rem;
+    color: #fff;
+    background-color: #2ecc71;
+    background: linear-gradient(180deg, #2ecc71, #1abc9c);
+    margin: 10px 0;
+    font-family: Roboto, sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-align: center;
+    top: 0;
+    position: sticky;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
