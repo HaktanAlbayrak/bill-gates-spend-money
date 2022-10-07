@@ -1,5 +1,5 @@
 .product-wrapper {
-  width: 62.5rem;
+  width: 100%;
   margin: auto;
   display: grid;
   grid-gap: 10px;
@@ -7,7 +7,7 @@
   grid-auto-rows: 1fr;
 
   .product-item {
-    width: 20.2rem;
+    width: 100%;
     background-color: white;
     color: white;
     display: flex;
@@ -37,6 +37,7 @@
       font-weight: 700;
       font-size: 20px;
       color: #24c486;
+      margin-top: 5px;
     }
 
     .item-buttons {
