@@ -5,6 +5,7 @@ import "../styles/layout.scss";
 import ProfileCard from "./ProfileCard";
 import Money from "./Money";
 import Product from "./Product";
+import Receipt from "./Receipt";
 
 const Layout = () => {
   return (
@@ -12,6 +13,7 @@ const Layout = () => {
       <ProfileCard />
       <Money />
       <Product />
+      <Receipt />
     </div>
   );
 };

@@ -1,9 +1,11 @@
 import React from "react";
 import ProductItem from "./ProductItem";
 import "../styles/product.scss";
-import products from "../utils/products";
+import { useBasket } from "../redux/basket";
 
 const Product = () => {
+  const { products } = useBasket();
+
   return (
     <div className="product-wrapper">
       {products.map((product) => (

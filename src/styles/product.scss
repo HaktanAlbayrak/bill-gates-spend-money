@@ -61,21 +61,6 @@
         -ms-user-select: none;
         user-select: none;
         touch-action: manipulation;
-
-        &:disabled {
-          background-color: -internal-light-dark(
-            rgba(239, 239, 239, 0.3),
-            rgba(19, 1, 1, 0.3)
-          );
-          color: -internal-light-dark(
-            rgba(16, 16, 16, 0.3),
-            rgba(255, 255, 255, 0.3)
-          );
-          border-color: -internal-light-dark(
-            rgba(118, 118, 118, 0.3),
-            rgba(195, 195, 195, 0.3)
-          );
-        }
       }
 
       .sell-button {
@@ -84,6 +69,15 @@
         font-weight: 700;
         margin-right: 5px;
       }
+
+      .sell-button-disable {
+        cursor: default;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-right: 5px;
+        background-color: #f1f2f6;
+        color: #333333;
+      }
       .count {
         font-size: 1rem;
         text-align: center;
@@ -91,15 +85,28 @@
         border: 1px solid #b2bec3;
         color: #333;
         width: 50%;
-        pointer-events: none;
         background-color: transparent;
         margin-right: 5px;
+
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
       }
 
       .buy-button {
         font-size: 1rem;
         font-weight: 700;
         background: linear-gradient(180deg, #2ecc71, #1abc9c);
+      }
+
+      .buy-button-disable {
+        cursor: default;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-right: 5px;
+        background-color: #f1f2f6;
+        color: #333333;
       }
     }
   }

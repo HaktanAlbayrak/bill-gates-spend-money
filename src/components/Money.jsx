@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useCountUp } from "react-countup";
 import { useBasket } from "../redux/basket";
 import "../styles/money.scss";
 
 const Money = () => {
+  const [fix, setFix] = useState(false);
+
   const { balance } = useBasket();
 
   const countUpRef = useRef(null);
@@ -18,12 +20,21 @@ const Money = () => {
     prefix: "$",
   });
 
+  const fixedMoneyOnTop = () => {
+    if (window.scrollY >= 425) {
+      setFix(true);
+    } else {
+      setFix(false);
+    }
+  };
+
   useEffect(() => {
     update(balance);
   }, [balance]);
 
+  window.addEventListener("scroll", fixedMoneyOnTop);
   return (
-    <div className="money-wrapper">
+    <div className={fix ? "money-fixed" : "money-wrapper"}>
       <div className="money-bar" ref={countUpRef} />
     </div>
   );
