@@ -21,6 +21,10 @@ const Receipt = () => {
     setReceiptTotal(total);
   }, [products]);
 
+  if (receiptData.length === 0) {
+    return;
+  }
+
   return (
     <div className="receipt-wrapper">
       <div className="receipt-headline">Your Receipt</div>
