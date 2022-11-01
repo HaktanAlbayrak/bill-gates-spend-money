@@ -1,6 +1,6 @@
 # BILL GATES SPEND MONEY
 
-In this project, you can review my bill gates spend money project that I made using react redux-toolkit. You can download **npm install** packages to the terminal and install the packages, then you can start the project by typing **npm run dev** in the terminal.
+In this project, you can review my bill gates spend money project that I made using react redux-toolkit. You can download **npm install** packages to the terminal, then you can start the project by typing **npm run dev** in the terminal.
 this project is the second assignment of the patika.dev redux course.
 
 ## [Project View](https://billgates-spendmoney.netlify.app/)
