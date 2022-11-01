@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addBasket, sellBasket, useBasket } from "../redux/basket";
+import {
+  addBasket,
+  changeBalance,
+  sellBasket,
+  useBasket,
+} from "../redux/basket";
 import "../styles/product.scss";
 import { numberWithCommas } from "../utils/formatMoney";
 
 const ProductItem = ({ product }) => {
   const [disable, setDisable] = useState(true);
   const [noMoney, setNoMoney] = useState(false);
+  const [count, setCount] = useState(0);
 
   const { balance } = useBasket();
 
   const dispatch = useDispatch();
+
+  const maximumal = Math.floor(balance / product.productPrice);
+  const maximum = Number(maximumal);
 
   const buyHandler = (id) => {
     dispatch(addBasket(id));
@@ -20,10 +29,6 @@ const ProductItem = ({ product }) => {
     if (product.count !== 0) {
       dispatch(sellBasket(id));
     }
-  };
-
-  const handleChange = (value) => {
-    dispatch(changeCount({ ...product, count, newCount: +e.target.value }));
   };
 
   useEffect(() => {
@@ -38,7 +43,7 @@ const ProductItem = ({ product }) => {
     } else {
       setNoMoney(false);
     }
-  }, [product.count]);
+  }, [product.count, balance, count]);
 
   return (
     <div className="product-item" id={product.id}>
@@ -58,11 +63,10 @@ const ProductItem = ({ product }) => {
           Sell
         </button>
         <input
-          pattern="\d*"
           type="number"
           value={product.count}
           className="count"
-          onChange={() => handleChange}
+          disable={true}
         />
         <button
           className={noMoney ? "buy-button-disable" : "buy-button"}

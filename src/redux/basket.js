@@ -9,8 +9,6 @@ export const basketSlice = createSlice({
   initialState: {
     initialMoney: initialMoney,
     balance: initialMoney,
-    basket: [],
-    total: 0,
     products,
   },
   reducers: {
@@ -21,6 +19,20 @@ export const basketSlice = createSlice({
       const newBalance = state.balance - filterProduct.productPrice;
       state.balance = newBalance;
     },
+    changeBalance: (state, action) => {
+      const { product, count } = action.payload;
+      const findItem = state.products.find((fI) => fI.id === product.id);
+
+      const maximumal = Math.floor(state.balance / product.productPrice);
+      const maximum = count + Number(maximumal);
+      findItem.count = maximum;
+
+      let total = 0;
+      state.products.forEach((cr) => {
+        total += cr.count * cr.productPrice;
+      });
+      state.balance = state.balance - total;
+    },
     sellBasket: (state, action) => {
       const filterProduct = state.products.find((x) => x.id === action.payload);
       filterProduct.count--;
@@ -28,40 +40,10 @@ export const basketSlice = createSlice({
       const newBalance = state.balance + filterProduct.productPrice;
       state.balance = newBalance;
     },
-    changeCount: (state, action) => {
-      if (
-        state.balance + action.payload.count * action.payload.productPrice >
-        action.payload.newCount * action.payload.productPrice
-      ) {
-        action.payload.count = action.payload.newCount;
-      } else {
-        const currentBalance =
-          state.balance + action.payload.count * action.payload.productPrice;
-        const availableCount = currentBalance / action.payload.productPrice;
-        action.payload.count = Math.floor(availableCount);
-      }
-
-      if (!state.basket.find((e) => e.id === action.payload.id)) {
-        if (action.payload.count > 0) {
-          state.basket = [...state.basket, action.payload];
-        }
-      } else {
-        if (action.payload.count > 0) {
-          state.basket = state.basket.map((e) => {
-            if (e.id === action.payload.id) {
-              e.count = action.payload.count;
-            }
-            return e;
-          });
-        } else {
-          state.basket = state.basket.filter((e) => e.id !== action.payload.id);
-        }
-      }
-    },
   },
 });
 
 export const useBasket = () => useSelector((state) => state.basket);
 
-export const { addBasket, sellBasket, changeCount } = basketSlice.actions;
+export const { addBasket, sellBasket, changeBalance } = basketSlice.actions;
 export default basketSlice.reducer;

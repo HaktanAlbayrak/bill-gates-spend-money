@@ -46,10 +46,24 @@
   }
 
   .receipt-total {
+    width: 320px;
     color: #33373d;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: space-between;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+
+    .receipt-total-text {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    .receipt-total-money {
+      color: #24c486;
+      text-align: right;
+    }
   }
 }
