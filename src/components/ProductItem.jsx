@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-  addBasket,
-  changeBalance,
-  sellBasket,
-  useBasket,
-} from "../redux/basket";
+import { addBasket, sellBasket, useBasket } from "../redux/basket";
 import "../styles/product.scss";
 import { numberWithCommas } from "../utils/formatMoney";
 
@@ -66,7 +61,7 @@ const ProductItem = ({ product }) => {
           type="number"
           value={product.count}
           className="count"
-          disable={true}
+          disabled={true}
         />
         <button
           className={noMoney ? "buy-button-disable" : "buy-button"}
